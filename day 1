@@ -1,4 +1,4 @@
-1.
+1.reverse number 
   public class WordReverser {
   public static void main(String[] args) {
     String word = "hello";
@@ -12,7 +12,105 @@
   }
 }
 
-output:
-Reversed word: olleh
-2.
+
+2. coverting string to integer
+public class StringToInt {
+    public static void main(String[] args) {
+        String str = "1234";
+        int num = Integer.parseInt(str);
+        System.out.println("Output String: " + num);
+    }
+}
+
+3.
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class ValidateUsername {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a username:");
+        String username = scanner.nextLine();
+
+        if (isValidUsername(username)) {
+            System.out.println("Username is valid");
+        } else {
+            System.out.println("Username is not valid");
+        }
+    }
+
+    public static boolean isValidUsername(String username) {
+        String pattern = "^[a-zA-Z0-9_]{3,16}$";
+        return Pattern.matches(pattern, username);
+    }
+}
+
+4.
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<String> names = new ArrayList<>();
+
+        System.out.println("Enter the number of names:");
+        int numNames = scanner.nextInt();
+        scanner.nextLine(); // consume newline left-over
+
+        System.out.println("Enter the names:");
+        for (int i = 0; i < numNames; i++) {
+            names.add(scanner.nextLine());
+        }
+
+        System.out.println("Do you want to sort in ascending (A) or descending (D) order?");
+        char choice = scanner.next().charAt(0);
+
+        if (choice == 'A' || choice == 'a') {
+            Collections.sort(names);
+            System.out.println("Sorted names in ascending order:");
+        } else if (choice == 'D' || choice == 'd') {
+            Collections.sort(names, Collections.reverseOrder());
+            System.out.println("Sorted names in descending order:");
+        } else {
+            System.out.println("Invalid choice. Exiting.");
+            return;
+        }
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
+
+5.
+import java.util.Scanner;
+
+public class SpecialCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a line of text:");
+        String line = scanner.nextLine();
+
+        int specialCharCount = 0;
+        System.out.print("Special characters: ");
+
+        for (char c : line.toCharArray()) {
+            if (!Character.isLetterOrDigit(c) &&!Character.isWhitespace(c)) {
+                System.out.print(c + " ");
+                specialCharCount++;
+            }
+        }
+
+        System.out.println("\nNumber of special characters: " + specialCharCount);
+    }
+}
+
+
+
   
