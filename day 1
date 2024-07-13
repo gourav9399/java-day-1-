@@ -110,6 +110,190 @@ public class SpecialCharacters {
     }
 }
 
+6.import java.util.Scanner;
 
+public class VowelCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a statement: ");
+        String statement = scanner.nextLine();
+
+        
+        statement = statement.toLowerCase();
+
+        
+        int vowelCount = 0;
+
+        
+        for (int i = 0; i < statement.length(); i++) {
+            char ch = statement.charAt(i);
+            if (isVowel(ch)) {
+                vowelCount++;
+            }
+        }
+
+        
+        System.out.println("Number of vowels: " + vowelCount);
+
+       
+        scanner.close();
+    }
+
+      public static boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+}
+
+7.import java.util.Scanner;
+
+public class ConsonantsAndVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+   
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+       
+        word = word.toLowerCase();
+
+       
+        StringBuilder vowels = new StringBuilder();
+        StringBuilder consonants = new StringBuilder();
+
+       
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            if (isVowel(ch)) {
+                vowels.append(ch);
+            } else if (isConsonant(ch)) {
+                consonants.append(ch);
+            }
+        }
+
+            System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+
+             scanner.close();
+    }
+
+    
+    public static boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+
+    
+    public static boolean isConsonant(char ch) {
+        return (ch >= 'a' && ch <= 'z') && !isVowel(ch);
+    }
+}
+
+8.import java.util.Scanner;
+
+public class CharacterSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+               System.out.print("Enter a character to search for: ");
+        char searchChar = scanner.next().charAt(0);
+
+       
+
+        boolean found = false;
+
+
+        for (int i = 0; i < inputString.length(); i++) {
+            if (inputString.charAt(i) == searchChar) {
+                found = true;
+                System.out.println("Character '" + searchChar + "' found at index: " + i);
+            }
+        }
+
+
+        if (!found) {
+            System.out.println("Character '" + searchChar + "' is not present in the string.");
+        }
+
+
+        scanner.close();
+    }
+}
+
+9.import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ReverseAlphabeticalOrder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+              System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        
+        Character[] charArray = new Character[word.length()];
+        for (int i = 0; i < word.length(); i++) {
+            charArray[i] = word.charAt(i);
+        }
+
+              Arrays.sort(charArray, Collections.reverseOrder());
+
+        
+        StringBuilder sortedWord = new StringBuilder();
+        for (char ch : charArray) {
+            sortedWord.append(ch);
+        }
+
+               System.out.println("Word in reverse alphabetical order: " + sortedWord);
+
+        
+        scanner.close();
+    }
+}
+
+10.import java.util.Scanner;
+
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        
+        String resultString = removeVowels(inputString);
+
+        
+        System.out.println("String after removing vowels: " + resultString);
+
+        
+        scanner.close();
+    }
+
+    
+    public static String removeVowels(String str) {
+        StringBuilder result = new StringBuilder();
+
+        
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (!isVowel(ch)) {
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
+    }
+
+       public static boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+}
 
   
