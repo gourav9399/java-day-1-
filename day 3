@@ -1,0 +1,259 @@
+PROGRAM 22.
+import java.util.Scanner;
+
+public class HollowSquareSymbolPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter the symbol to use for the pattern: ");
+        String symbol = scanner.next();
+
+
+        System.out.print("Enter the size of the hollow square: ");
+        int size = scanner.nextInt();
+
+        
+        printHollowSquareSymbolPattern(symbol, size);
+
+
+        scanner.close();
+    }
+
+    
+    public static void printHollowSquareSymbolPattern(String symbol, int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                    System.out.print(symbol + " ");
+                } else {
+                    
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+PROGRAM 23.
+  public class NumberPattern {
+    public static void main(String[] args) {
+        int rows = 4; 
+
+        for (int i = 1; i <= rows; i++) {
+            // Print the number i, i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+PROGRAM 24.
+  public class SquareNumberPattern {
+    public static void main(String[] args) {
+        int rows = 4; 
+        int number = 1; 
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+            
+                System.out.printf("%-5d", number * number);
+                number++;
+            }
+            System.out.println();
+        }
+    }
+}
+PROGRAM 25.
+  public class MirroredNumberPattern {
+    public static void main(String[] args) {
+        int rows = 4;
+
+      
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (j > 1) {
+                    System.out.print(" ");
+                }
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+
+    
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                if (j > 1) {
+                    System.out.print(" ");
+                }
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+}
+PROGRAM 26
+  import java.util.Scanner;
+
+public class HollowSquareDollarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+  
+        System.out.print("Enter the size of the hollow square: ");
+        int size = scanner.nextInt();
+
+        
+        printHollowSquareDollarPattern(size);
+
+        scanner.close();
+    }
+
+    public static void printHollowSquareDollarPattern(int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+           
+                if (i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+                    System.out.print("$ ");
+                } else {
+                    
+                    System.out.print("  ");
+                }
+            }
+            System.out.println(); 
+        }
+    }
+}
+PROGRAM 27.
+  import java.util.Scanner;
+
+public class RightAlignedAsteriskPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+      
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+      
+        printRightAlignedAsteriskPattern(rows);
+
+   
+        scanner.close();
+    }
+
+   
+    public static void printRightAlignedAsteriskPattern(int rows) {
+        for (int i = rows; i > 0; i--) {
+     
+            for (int j = 0; j < rows - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 0; k < 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+    
+            System.out.println();
+        }
+    }
+}
+
+PROGRAM 28.
+  import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+      
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+       
+        int reversedNumber = reverseNumber(number);
+
+        System.out.println("Reversed number: " + reversedNumber);
+
+
+        scanner.close();
+    }
+
+
+    public static int reverseNumber(int number) {
+        int reversed = 0;
+        while (number != 0) {
+
+            int digit = number % 10;
+
+
+            reversed = reversed * 10 + digit;
+
+       
+            number = number / 10;
+        }
+        return reversed;
+    }
+}
+PROGRAM 29.
+  import java.util.Scanner;
+
+public class DecimalToBinaryReverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+
+        String binaryString = Integer.toBinaryString(decimalNumber);
+
+        String reversedBinaryString = reverseString(binaryString);
+
+
+        System.out.println("Reversed binary string: " + reversedBinaryString);
+
+
+        scanner.close();
+    }
+
+
+    public static String reverseString(String str) {
+        StringBuilder stringBuilder = new StringBuilder(str);
+        return stringBuilder.reverse().toString();
+    }
+}
+
+PROGRAM 30.
+  import java.util.Scanner;
+
+public class VoterEligibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+      
+        final int MIN_VOTING_AGE = 18;
+
+     
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+     
+        if (age >= MIN_VOTING_AGE) {
+            System.out.println("You are eligible to vote.");
+        } else {
+
+            int yearsLeft = MIN_VOTING_AGE - age;
+            System.out.println("You are not eligible to vote. You need " + yearsLeft + " more year(s) to be eligible.");
+        }
+
+
+        scanner.close();
+    }
+}
+
+
+
+
